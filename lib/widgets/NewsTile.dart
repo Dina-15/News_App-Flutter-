@@ -10,25 +10,28 @@ class Newstile extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(8),
-          child: Image.network(
+          child: article.image!=null? Image.network(
+              article.image!
+              ,
+              height:200,
               width: double.infinity,
-              height: 250,
-              fit: BoxFit.fill,
-              article.image ?? 'assets/technology.jpeg'), 
+              fit:BoxFit.cover,
+            ):Image.asset("assets/null.png",width: double.infinity,height:200, fit:BoxFit.cover), 
         ),
         Text(
           article.title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
-              color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
+              color: Colors.black, fontSize: 28, fontWeight: FontWeight.bold),
         ),
         Text(
           article.subTiltle ?? '',
-          style: TextStyle(color: Colors.grey, fontSize: 15),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(color: Colors.grey, fontSize: 16),
         ),
       ],
     );
   }
 }
-//'https://newsapi.org/v2/top-headlines?country=us&apiKey=1c95d742498e492e8a7ec8c687e8af36'

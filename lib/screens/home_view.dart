@@ -15,12 +15,12 @@ class homePage extends StatelessWidget {
               Text(
                 'News',
                 style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.black, fontSize: 30,fontWeight: FontWeight.bold),
               ),
               Text(
                 'Cloud',
                 style: TextStyle(
-                    color: Colors.orange, fontWeight: FontWeight.bold),
+                    color: Colors.orange, fontSize: 30, fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -35,7 +35,7 @@ class homePage extends StatelessWidget {
                   height: 20,
                 ),
               ),
-              NewsListBuilder()
+              NewsListBuilder(category: 'general',)
             ],
           ),
         ));
